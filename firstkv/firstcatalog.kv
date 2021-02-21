@@ -1,6 +1,8 @@
+#:import MDLabel kivymd.uix.label.MDLabel
+#:import MDTextField kivymd.uix.textfield.MDTextField
+#:import MDRaisedButton kivymd.uix.button.MDRaisedButton
 
-
-<ItemLabel@Label>:
+<ItemLabel@MDLabel>:
     font_size: '25sp'
     halign: 'left'
     valign: 'middle'
@@ -21,7 +23,7 @@
 
     AnchorLayout:
         size_hint: 1, 0.15
-        TextInput:
+        MDTextField:
             id: text_input
             font_size: '45sp'
             multiline: False
@@ -72,7 +74,7 @@
         size_hint: 0.9 , 0.15
         padding: [30, 0, 30, 20 ]
 
-        Button:
+        MDRaisedButton:
             text: "Go"
             font_size: '40sp'
             on_release: root.calculate()

@@ -1,9 +1,13 @@
-from kivy.app import App
+
 from kivy.config import Config
 from kivy.core.window import Window
 from kivy.uix.gridlayout import GridLayout
 
+
 Config.set('kivy', 'keyboard_mode', 'systemanddock')
+
+from kivymd.theming import ThemeManager
+from kivymd.app import MDApp
 
 # Window.size = (480, 853)
 
@@ -32,8 +36,14 @@ class Container(GridLayout):
         self.time.text = ingridients.get("setting_time")
 
 
-class FirstCatalogApp(App):
+class FirstCatalogApp(MDApp):
+
+    title = "Coppa APP"
+    def __init__(self, **kwargs):
+        self.theme_cls.theme_style = "Light"
+        super().__init__(**kwargs)
     def build(self):
+
         return Container()
 
 

@@ -6,11 +6,11 @@ from kivy.uix.boxlayout import BoxLayout
 class Container(BoxLayout):
     pass
 
-class FirstApp(App):
+class FirstCatalogApp(App):
     def build(self):
         return Container()
 
 
 if __name__ == '__main__':
-    app = FirstApp()
+    app = FirstCatalogApp()
     app.run()

@@ -1,11 +1,79 @@
 
 
-<Container>:
-    orientation: "vertical"
-    padding: 50
-    spacing: 10
-    Button:
-        text: "hello"
+<ItemLabel@Label>:
+    font_size: '25sp'
+    halign: 'left'
+    valign: 'middle'
+    text_size: self.size
 
-    Button:
-        text: "word"
+
+<Container>:
+    rows: 3
+
+    text_input: text_input
+    salt: salt
+    nitro: nitro
+    sugar: sugar
+    starts: starts
+    time: time
+
+
+
+    AnchorLayout:
+        size_hint: 1, 0.15
+        TextInput:
+            id: text_input
+            font_size: '45sp'
+            multiline: False
+            input_type: "number"
+            input_filter: "int"
+
+
+    GridLayout:
+        cols: 2
+        BoxLayout:
+            padding: [30, 0, 0, 0]
+            orientation: 'vertical'
+            ItemLabel:
+                text: "соль"
+            ItemLabel:
+                text: "нитритная соль"
+            ItemLabel:
+                text: "Моносахар"
+            ItemLabel:
+                text: "Старт"
+            ItemLabel:
+                text: "Время засолки"
+
+        BoxLayout:
+            size_hint: 0.5, 1
+            orientation: 'vertical'
+            ItemLabel:
+                id: salt
+                text: "0"
+
+            ItemLabel:
+                id: nitro
+                text: "0"
+
+            ItemLabel:
+                id: sugar
+                text: "0"
+
+            ItemLabel:
+                id: starts
+                text: "0"
+
+            ItemLabel:
+                id: time
+                text: "0"
+
+    BoxLayout:
+        size_hint: 0.9 , 0.15
+        padding: [30, 0, 30, 20 ]
+
+        Button:
+            text: "Go"
+            font_size: '40sp'
+            on_release: root.calculate()
+
